@@ -1,6 +1,6 @@
 ﻿using SolarWatchBackend.Models;
 
-namespace SolarWatch.Services;
+namespace SolarWatchBackend.Services;
 
 public interface ISunSetRiseProvider
 {
