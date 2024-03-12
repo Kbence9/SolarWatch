@@ -17,6 +17,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IJsonProcessor, JsonProcessor>();
 builder.Services.AddTransient<ISunSetRiseProvider, SunSetRiseProvider>();
+builder.Services.AddTransient<ICityProvider, CityProvider>();
 
 
 var app = builder.Build();
