@@ -1,4 +1,4 @@
-namespace AskMate.Service;
+namespace SolarWatchBackend.Service;
 
 public class DotEnv
 {

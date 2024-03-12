@@ -1,7 +1,4 @@
-﻿using System.Net;
-using SolarWatchBackend.Services;
-using SolarWatchBackend.Models;
-using WeatherApi.Services;
+﻿using SolarWatchBackend.Models;
 
 namespace SolarWatchBackend.Services;
 

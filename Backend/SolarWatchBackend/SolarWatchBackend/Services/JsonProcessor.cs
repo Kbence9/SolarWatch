@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using SolarWatchBackend.Models;
 
-namespace WeatherApi.Services;
+namespace SolarWatchBackend.Services;
 
 public class JsonProcessor : IJsonProcessor
 {

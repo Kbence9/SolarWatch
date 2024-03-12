@@ -1,6 +1,6 @@
 ﻿using SolarWatchBackend.Models;
 
-namespace WeatherApi.Services;
+namespace SolarWatchBackend.Services;
 
 public interface IJsonProcessor
 {
