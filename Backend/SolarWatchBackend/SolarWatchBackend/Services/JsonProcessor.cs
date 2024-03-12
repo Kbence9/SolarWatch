@@ -7,14 +7,13 @@ public class JsonProcessor : IJsonProcessor
 {
     public City ProcessCity(string data, string cityName)
     {
-        JsonDocument json = JsonDocument.Parse(data);
+        var json = JsonDocument.Parse(data);
 
         var city = new City(
             cityName,
             (float)json.RootElement[0].GetProperty("lat").GetDecimal(),
             (float)json.RootElement[0].GetProperty("lon").GetDecimal(),
-            json.RootElement[0].GetProperty("country").GetString(),
-            json.RootElement[0].GetProperty("state").GetString()
+            json.RootElement[0].GetProperty("country").GetString()
             );
 
         return city;
@@ -22,8 +21,8 @@ public class JsonProcessor : IJsonProcessor
     
     public SunSetRise ProcessSunSetRise(string data, string city, DateTime date)
     {
-        JsonDocument json = JsonDocument.Parse(data);
-        JsonElement result = json.RootElement.GetProperty("results");
+        var json = JsonDocument.Parse(data);
+        var result = json.RootElement.GetProperty("results");
 
         var sunSetRise = new SunSetRise(
             city,
@@ -37,8 +36,8 @@ public class JsonProcessor : IJsonProcessor
     
     private static DateTime GetDateTimeFromUnixTimeStamp(long timeStamp)
     {
-        DateTimeOffset dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds(timeStamp);
-        DateTime dateTime = dateTimeOffset.UtcDateTime;
+        var dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds(timeStamp);
+        var dateTime = dateTimeOffset.UtcDateTime;
 
         return dateTime;
     }
