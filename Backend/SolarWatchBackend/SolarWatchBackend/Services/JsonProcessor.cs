@@ -5,6 +5,20 @@ namespace WeatherApi.Services;
 
 public class JsonProcessor : IJsonProcessor
 {
+    public City ProcessCity(string data, string cityName)
+    {
+        JsonDocument json = JsonDocument.Parse(data);
+
+        var city = new City(
+            cityName,
+            (float)json.RootElement[0].GetProperty("lat").GetDecimal(),
+            (float)json.RootElement[0].GetProperty("lon").GetDecimal(),
+            json.RootElement[0].GetProperty("country").GetString(),
+            json.RootElement[0].GetProperty("state").GetString()
+            );
+
+        return city;
+    }
     
     public SunSetRise ProcessSunSetRise(string data, string city, DateTime date)
     {
