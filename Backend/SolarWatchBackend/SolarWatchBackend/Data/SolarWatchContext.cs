@@ -12,5 +12,12 @@ public class SolarWatchContext : DbContext
         optionsBuilder.UseSqlServer(
             "Server=localhost,1433;Database=SolarWatch;User Id=sa;Password=Benten10.;Encrypt=false;");
     }
-    
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        //Configure the City entity - making the 'Name' unique
+        builder.Entity<City>()
+            .HasIndex(u => u.Name)
+            .IsUnique();
+    }
 }
