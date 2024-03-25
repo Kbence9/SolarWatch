@@ -1,5 +1,5 @@
-
 using System.Text.Json.Serialization;
+using SolarWatchBackend.Repositories;
 using SolarWatchBackend.Service;
 using SolarWatchBackend.Services;
 
@@ -24,6 +24,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IJsonProcessor, JsonProcessor>();
 builder.Services.AddTransient<ISunSetRiseProvider, SunSetRiseProvider>();
 builder.Services.AddTransient<ICityProvider, CityProvider>();
+builder.Services.AddTransient<ICityRepository, CityRepository>();
 
 
 var app = builder.Build();

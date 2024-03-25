@@ -4,5 +4,5 @@ namespace SolarWatchBackend.Services;
 
 public interface ICityProvider
 {
-    Task<City> GetCity(string city);
+    Task<City> GetCity(string cityName);
 }
