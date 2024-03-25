@@ -17,7 +17,8 @@ public class SolarWatchContext : DbContext
     {
         //Configure the City entity - making the 'Name' unique
         builder.Entity<City>()
-            .HasIndex(u => u.Name)
+            .HasIndex(c => c.Name)
             .IsUnique();
+        builder.Entity<City>().HasKey(c => c.Name);
     }
 }
