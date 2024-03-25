@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SolarWatchBackend.Models;
 using SolarWatchBackend.Services;
 
@@ -19,7 +20,7 @@ public class SunSetRiseController : ControllerBase
         _cityProvider = cityProvider;
     }
 
-    [HttpGet("GetSunSetRise")]
+    [HttpGet("GetSunSetRise"), Authorize]
     public ActionResult<SunSetRise> GetSunSetRise(string city, DateTime date)
     {
         try
