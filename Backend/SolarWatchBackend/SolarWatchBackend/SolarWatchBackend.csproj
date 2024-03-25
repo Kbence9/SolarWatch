@@ -4,10 +4,13 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>2d6ec046-1d2b-45dd-9efa-7f09a71b0a0f</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Docker.DotNet" Version="3.125.15" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.9"/>
+        <PackageReference Include="Moq" Version="4.20.70" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
     </ItemGroup>
 

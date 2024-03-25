@@ -5,11 +5,12 @@ namespace SolarWatchBackend.Services;
 public class CityProvider : ICityProvider
 {
     private readonly ILogger<CityProvider> _logger;
-    private readonly JsonProcessor _jsonProcessor = new();
+    private readonly IJsonProcessor _jsonProcessor;
 
-    public CityProvider(ILogger<CityProvider> logger)
+    public CityProvider(ILogger<CityProvider> logger, IJsonProcessor jsonProcessor)
     {
         _logger = logger;
+        _jsonProcessor = jsonProcessor;
     }
 
     public async Task<City> GetCity(string city)
@@ -22,5 +23,6 @@ public class CityProvider : ICityProvider
         _logger.LogInformation("Calling OpenWeather API with url: {url}", url);
         var response = await client.GetAsync(url);
         return _jsonProcessor.ProcessCity(await response.Content.ReadAsStringAsync(), city);
+        
     }
 }
