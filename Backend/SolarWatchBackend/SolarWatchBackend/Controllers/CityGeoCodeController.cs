@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SolarWatchBackend.Models;
 using SolarWatchBackend.Services;
 
@@ -17,7 +18,7 @@ public class CityGeoCodeController : ControllerBase
         _cityProvider = cityProvider;
     }
 
-    [HttpGet]
+    [HttpGet, Authorize]
     public ActionResult<CityGeoCode> GetCityGeoCode(string city)
     {
         try
